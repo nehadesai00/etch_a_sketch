@@ -4,6 +4,7 @@ let grid_container = document.querySelector("#grid-container");
 let black = document.querySelector("#black");
 let multicolor = document.querySelector("#multicolor");
 let grid_squares = document.getElementsByClassName("squares");
+let clear = document.querySelector("#clear");
 
 
 size_button.addEventListener('click', () => {
@@ -45,3 +46,12 @@ multicolor.addEventListener('click', () => {
 function randomColor() {
     return Math.floor(Math.random()*16777215).toString(16);
 }
+
+
+clear.addEventListener('click', () => {
+    let nodes_to_delete = Array.from(grid_squares);
+
+    for (let i = 0; i < nodes_to_delete.length; i++) {
+        nodes_to_delete[i].remove();
+    }
+});
