@@ -31,3 +31,17 @@ black.addEventListener('click', () => {
         });
     }
 });
+
+
+multicolor.addEventListener('click', () => {
+    for (let i = 0; i < grid_squares.length; i++) {
+        grid_squares[i].addEventListener('mouseover', () => {
+            grid_squares[i].style.backgroundColor = "#" + randomColor();
+        });
+    }
+});
+
+
+function randomColor() {
+    return Math.floor(Math.random()*16777215).toString(16);
+}
